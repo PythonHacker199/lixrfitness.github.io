@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calisthenics Workout App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./calisthenics_workout_app.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="hero">
+      <nav class="topbar">
+        <div class="brand">
+          <div class="brand-mark">C</div>
+          <div>
+            <p class="eyebrow">Bodyweight Training</p>
+            <h1>Calisthenics Program</h1>
+          </div>
+        </div>
+        <a class="ghost-link" href="#planner">Open Planner</a>
+      </nav>
+
+      <div class="hero-grid">
+        <section class="hero-copy">
+          <p class="hero-kicker">6-day bodyweight + skipping rope system</p>
+          <h2>Build strength, power, conditioning, and visible control without a gym.</h2>
+          <p class="hero-text">
+            This plan turns your original workout sheet into a usable training site with daily programming,
+            progress tracking, recovery reminders, and a built-in offline coach.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#planner">Start Training</a>
+            <button class="secondary-btn" id="jump-today" type="button">Today's Session</button>
+          </div>
+          <ul class="hero-points">
+            <li>Progress saved in your browser</li>
+            <li>Weekly split built for muscle and endurance</li>
+            <li>No paid API or backend required</li>
+          </ul>
+        </section>
+
+        <aside class="hero-panel">
+          <div class="hero-stat">
+            <span class="stat-label">Program Style</span>
+            <strong>Strength + Conditioning</strong>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-label">Equipment</span>
+            <strong>Bodyweight, chair, towel, rope</strong>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-label">Focus</span>
+            <strong>Muscle, power, endurance</strong>
+          </div>
+          <div class="hero-note">
+            <p>Train hard on the work days. Recover hard on the rest day.</p>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main class="main-grid">
+      <section class="info-card" id="overview">
+        <div class="section-heading">
+          <p class="eyebrow">Overview</p>
+          <h3>What this week covers</h3>
+        </div>
+        <div class="pill-row">
+          <span class="info-pill">Push power</span>
+          <span class="info-pill">Pull and core</span>
+          <span class="info-pill">Leg explosiveness</span>
+          <span class="info-pill">Endurance circuits</span>
+          <span class="info-pill">Skill work</span>
+          <span class="info-pill">Recovery</span>
+        </div>
+      </section>
+
+      <section class="dashboard" id="planner">
+        <div class="section-heading">
+          <p class="eyebrow">Planner</p>
+          <h3>Weekly training board</h3>
+        </div>
+
+        <div class="progress-row">
+          <article class="prog-card">
+            <div class="prog-num" id="week-num">1</div>
+            <div class="prog-label">Week</div>
+          </article>
+          <article class="prog-card">
+            <div class="prog-num" id="day-done">0</div>
+            <div class="prog-label">Days done</div>
+          </article>
+          <article class="prog-card">
+            <div class="prog-num">6</div>
+            <div class="prog-label">Days per week</div>
+          </article>
+          <article class="prog-card">
+            <div class="prog-num" id="streak-num">0</div>
+            <div class="prog-label">Completion rate</div>
+          </article>
+        </div>
+
+        <div class="planner-layout">
+          <div class="tab-panel">
+            <div class="section-label">Select day</div>
+            <div class="day-tabs" id="day-tabs"></div>
+            <div class="planner-tip">
+              <p>Use the tabs to switch sessions, then mark the workout complete when finished.</p>
+            </div>
+          </div>
+          <div id="workout-content" class="content-panel"></div>
+        </div>
+      </section>
+
+      <section class="coach-card">
+        <div class="section-heading">
+          <p class="eyebrow">Coach</p>
+          <h3>Ask for training advice</h3>
+        </div>
+        <p class="coach-copy">
+          This coach works offline. Ask about form, substitutions, progression, recovery, or how to improve a specific movement.
+        </p>
+        <div class="ai-input-row">
+          <input type="text" id="ai-input" placeholder="How do I improve push-ups with no equipment?" />
+          <button id="ask-button" type="button">Ask Coach</button>
+        </div>
+        <div class="quick-prompts">
+          <button type="button" class="quick-prompt">How do I get better at push-ups?</button>
+          <button type="button" class="quick-prompt">What should I do on rest day?</button>
+          <button type="button" class="quick-prompt">Give me a rope warm-up</button>
+        </div>
+        <div class="ai-response" id="ai-response">Ask a question and the coach will answer here.</div>
+      </section>
+
+      <section class="info-grid">
+        <article class="info-card">
+          <div class="section-heading">
+            <p class="eyebrow">Rules</p>
+            <h3>Simple progression</h3>
+          </div>
+          <ul class="rule-list">
+            <li>Hit all reps cleanly before increasing difficulty.</li>
+            <li>Add tempo, pauses, or extra sets before chasing harder skills.</li>
+            <li>Keep one or two reps in reserve on most strength work.</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <div class="section-heading">
+            <p class="eyebrow">Recovery</p>
+            <h3>What matters most</h3>
+          </div>
+          <ul class="rule-list">
+            <li>Sleep enough or the program stops working.</li>
+            <li>Walk, stretch, and hydrate on low-energy days.</li>
+            <li>Protect wrists, elbows, and shoulders with clean form.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="./calisthenics_workout_app.js"></script>
+</body>
+</html>
